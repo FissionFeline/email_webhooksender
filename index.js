@@ -8,7 +8,7 @@ app.use(body_pars.json())
 
 app.use('', routing)
 
-app.listen(process.env.PORT, function() {
-    console.log(`App is running on ${process.env.PORT}`);
-    console.log(`We are currently in a ${process.env.STATE} enviorment`)
+app.listen(process.env.PORT || 2020, function() {
+    console.log(`App is running on ${process.env.PORT || 2020}`);
+    console.log(`We are currently in a ${process.env.STATE || "testing"} enviorment`)
 });
