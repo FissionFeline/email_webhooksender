@@ -1,0 +1,19 @@
+{
+  "name": "email_webhooksender",
+  "version": "1.0.0",
+  "description": "A webhook that opun calling will send an email to a pre designated address",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FissionFeline/email_webhooksender.git"
+  },
+  "author": "Furious Feline",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FissionFeline/email_webhooksender/issues"
+  },
+  "homepage": "https://github.com/FissionFeline/email_webhooksender#readme"
+}
