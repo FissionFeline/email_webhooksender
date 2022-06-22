@@ -9,6 +9,11 @@ const apiLimiter = rateLimit({
     max: 20,
     standardHeaders: true,
     legacyHeaders: false,
+    message: {
+        status: "Error",
+        code: 429,
+        message: "Too many requests"
+    }
 })
 
 
