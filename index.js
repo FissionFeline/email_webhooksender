@@ -2,6 +2,7 @@ const express = require('express');
 const body_pars = require("body-parser")
 const app = express();
 const routing = require("./routing_sys.js");
+const rateLimit = require('express-rate-limit')
 
 require('dotenv').config()
 
