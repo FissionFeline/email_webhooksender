@@ -3,11 +3,17 @@ module.exports = (function() {
     var route = require('express').Router();
 
     route.get('/', function(req, res, next) {
-        request.post({
+        var headersOpt = {
+            'Content-Type': 'application/json',
+        };
+        request({
+            method: 'post',
             url: process.env.WEBHOOK,
-            body: "content:'test'"
+            form: { "content": `lets see if it works lol` },
+            headers: headersOpt,
+            json: true,
         }, function(error, response, body) {
-            console.log(body);
+            if (error) next()
         });
     });
 
