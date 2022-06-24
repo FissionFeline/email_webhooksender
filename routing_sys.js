@@ -2,14 +2,15 @@ module.exports = (function() {
     const request = require('request');
     var route = require('express').Router();
 
-    route.get('/', function(req, res, next) {
+    route.post('/', function(req, res, next) {
         var headersOpt = {
             'Content-Type': 'application/json',
         };
+        if (!req.body.email && !req.body.item_id) return next()
         request({
             method: 'post',
             url: process.env.WEBHOOK,
-            form: { "content": `lets see if it works lol` },
+            form: { "content": `Email: ${req.body.email}\nItem_Id: ${req.body.item_id}` },
             headers: headersOpt,
             json: true,
         }, function(error, response, body) {

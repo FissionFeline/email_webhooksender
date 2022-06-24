@@ -21,6 +21,8 @@ require('dotenv').config()
 
 app.use(body_pars.json())
 
+app.use(body_pars.urlencoded({ extended: true }));
+
 app.use('', apiLimiter)
 
 app.use('', routing)
