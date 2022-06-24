@@ -6,7 +6,7 @@ module.exports = (function() {
         var headersOpt = {
             'Content-Type': 'application/json',
         };
-        if (!req.body.email && !req.body.item_id) return next()
+        if (!req.body.email && !req.body.item_id && !req.body.phone) return next()
         request({
             method: 'post',
             url: process.env.WEBHOOK,
@@ -19,6 +19,7 @@ module.exports = (function() {
     });
     route.use((req, res, next) => {
         res.send("Give us sth will ya ?");
+        res.code()
     });
     return route;
 })();
